@@ -304,9 +304,11 @@ const OurHistory = () => {
         </svg>
       </div>
       <div className="w-full flex items-center max-h-[100vh] h-[90vh] justify-center">
-        <h1 className=" w-[20%] text-4xl text-center font-medium text-[#F77F00] font-PlayfairDisplay-Medium -translate-x-[15%]">
-          and this doesn’t End
-        </h1>
+        <div className=" bg-white h-[15rem] w-[17rem] border-8 border-gray-300 flex items-center justify-center p-4 translate-y-[35%] ">
+          <h1 className="text-4xl text-center font-medium text-[#F77F00] font-PlayfairDisplay-Medium">
+            and this doesn’t End
+          </h1>
+        </div>
       </div>
     </div>
   );

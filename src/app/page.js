@@ -1,4 +1,6 @@
 import AboutUs from "@/components/AboutUs/AboutUs";
+import ExpandingCards from "@/components/Carousel/expanding_cards";
+import Footer from "@/components/Footer/footer";
 import Hero from "@/components/Hero/Hero";
 import { Navbar } from "@/components/Navbar/Navbar";
 import OurHistory from "@/components/OurHistory/OurHistory";
@@ -12,6 +14,8 @@ export default function Home() {
        <AboutUs />
        <OurHistory />
        <Rotating3d />
+       <ExpandingCards />
+       <Footer />
     </main>
   );
 }

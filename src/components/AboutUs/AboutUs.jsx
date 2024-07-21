@@ -7,8 +7,8 @@ const AboutUs = () => {
   return (
     
     <div>
-    <div className='bg-white h-[200vh]'></div>
-      <div className='flex flex-col w-100%  bg-white h-[400vh] '>
+   
+      <div className='flex flex-col w-100%  bg-white h-auto mb-[20rem] '>
       <div className=' ml-[2rem] flex flex-row justify-center mt-[5rem] mb-0 items-center '>
           <div className=' w-[10rem] h-[1rem] border-[#003049] border-t-2 mt-[1rem] mr-[-1.2rem]'></div>
           <p className='text-[#003049] text-xl !m-0 p-8  font-Raleway-Regular'>Diversity in India</p>

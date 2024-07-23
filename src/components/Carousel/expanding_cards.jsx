@@ -66,7 +66,7 @@ const ExpandingCards = () => {
             className={`bg-cover bg-center flex items-end justify-center flex-1 m-2 rounded-l relative h-[80vh] fiter-brightness-10 transition-all duration-700 cursor-pointer ${activeIndex === index ? 'flex-[3]' : 'flex-[0.7]'}`}
             style={{ backgroundImage: `url(${panel.imageUrl})` }}
             onClick={() => handlePanelClick(index)}
-          > <div class="absolute inset-0 bg-black opacity-25"></div>
+          > <div className="absolute inset-0 bg-black opacity-25"></div>
             <div className={` align-middle flex flex-col items-center z-[5] justify-center opacity-0 ${activeIndex === index ? 'opacity-100 transition-opacity duration-300 delay-400' : ''} `}> <h3 className={`flex align-middle text-white text-5xl font-PlayfairDisplay-Bold opacity-0 ${activeIndex === index ? 'opacity-100 transition-opacity duration-300 delay-400' : ''}`}>
               {panel.title}
             </h3>

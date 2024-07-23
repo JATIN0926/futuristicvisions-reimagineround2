@@ -7,19 +7,19 @@ import Hero from "@/components/Hero/Hero";
 import { Navbar } from "@/components/Navbar/Navbar";
 import OurHistory from "@/components/OurHistory/OurHistory";
 import {Rotating3d} from "@/components/Rotating3d/Rotating3d";
+import ZoomingImage from "@/components/ZoomingImage/ZoomingImage";
 
 
 
 export default function Home() {
   return (
     <main className="flex flex-col max-w-screen">
-       <Hero />
-       {/* <Navbar /> */}
+       <ZoomingImage />
        <AboutUs />
        <OurHistory />
+       <ExpandingCards />
        <ExploreIndia />
        <Rotating3d />
-       <ExpandingCards />
        <Footer />
       
     </main>

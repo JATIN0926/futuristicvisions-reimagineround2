@@ -1,13 +1,32 @@
+"use client"
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import TextRevealByWord from './textreveal'
 import TextGenerateEffect from './text-generate'
+import { Navbar } from '../Navbar/Navbar'
 
 const AboutUs = () => {
+  const [isNavbarVisible, setIsNavbarVisible] = useState(false);
+  const aboutUsRef = useRef(null);
+
+  const handleScroll = () => {
+    if (aboutUsRef.current) {
+      const { top, height } = aboutUsRef.current.getBoundingClientRect();
+      const halfwayPoint = top + height / 2;
+      setIsNavbarVisible(halfwayPoint < window.innerHeight);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     
-    <div>
-   
+    <div ref={aboutUsRef}>
+       <Navbar isVisible={isNavbarVisible} />
       <div className='flex flex-col w-100%  bg-white h-auto mb-[20rem] '>
       <div className=' ml-[2rem] flex flex-row justify-center mt-[5rem] mb-0 items-center '>
           <div className=' w-[10rem] h-[1rem] border-[#003049] border-t-2 mt-[1rem] mr-[-1.2rem]'></div>

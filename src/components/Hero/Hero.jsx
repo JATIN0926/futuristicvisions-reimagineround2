@@ -2,9 +2,13 @@
 
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
+import { gsap } from "gsap";
 import "./hero.css"; // Import the CSS file
+import { useAnimationContext } from "../../context/AnimationContext.js";
+import HeroNav from "../HeroNav/HeroNav";
 
 const Hero = () => {
+  const { isZoomingAnimationComplete } = useAnimationContext();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [nextIndex, setNextIndex] = useState(null);
   const itemsRef = useRef([]);
@@ -19,12 +23,15 @@ const Hero = () => {
   ];
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      handleSelect((currentIndex + 1) % videos.length);
-    }, timeAutoNext);
+    let interval;
+    if (isZoomingAnimationComplete) {
+      interval = setInterval(() => {
+        handleSelect((currentIndex + 1) % videos.length);
+      }, timeAutoNext);
+    }
 
     return () => clearInterval(interval);
-  }, [currentIndex]); // Reset interval when currentIndex changes
+  }, [currentIndex, isZoomingAnimationComplete]); // Reset interval when currentIndex or isZoomingAnimationComplete changes
 
   const handleSelect = (index) => {
     if (index === currentIndex) return;
@@ -45,8 +52,48 @@ const Hero = () => {
     thumbnailsRef.current = thumbnailsRef.current.slice(0, videos.length);
   }, [videos]);
 
+  useEffect(() => {
+    // Set initial opacity of content to 0
+    gsap.set(".carousel .list .content", { opacity: 0 });
+
+    // Pause all videos initially
+    const videoElements = document.querySelectorAll(".carousel video");
+    videoElements.forEach(video => {
+      video.pause();
+      video.currentTime = 0; // Ensure video is at the first frame
+    });
+
+    if (isZoomingAnimationComplete) {
+      // Animate text in the center of each slide
+      gsap.fromTo(
+        ".carousel .content",
+        { y: 50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, stagger: 0.2 }
+      );
+
+      // Play the current video after the animation completes
+      videoElements[currentIndex].play();
+    }
+  }, [isZoomingAnimationComplete, currentIndex]);
+
+  useEffect(() => {
+    if (!isZoomingAnimationComplete) return;
+
+    const videoElements = document.querySelectorAll(".carousel video");
+    const currentVideo = videoElements[currentIndex];
+
+    if (currentIndex === 0) {
+      currentVideo.play();
+    } else {
+      currentVideo.play();
+      setTimeout(() => {
+        currentVideo.play();
+      }, 100); // Adding a slight delay to ensure smooth playback transition
+    }
+  }, [currentIndex, isZoomingAnimationComplete]);
   return (
     <div className="carousel">
+      <HeroNav />
       <div className="list relative">
         {videos.map((item, index) => (
           <div
@@ -55,7 +102,15 @@ const Hero = () => {
             ref={(el) => (itemsRef.current[index] = el)}
           >
             <div className={`overlay ${index === nextIndex ? "entering" : ""}`}></div>
-            <video src={item.src} width="100%" height="100%" className="object-cover" autoPlay muted></video>
+            <video
+              src={item.src}
+              width="100%"
+              height="100%"
+              className="object-cover"
+              muted
+              autoPlay={false}
+              playsInline
+            ></video>
             <div className="content z-[3]">
               <div className="flex flex-col items-center justify-center gap-1">
                 <div className="flex items-center justify-center gap-2">

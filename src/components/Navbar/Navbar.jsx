@@ -3,9 +3,9 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import './Nav.css'; // Import the custom CSS
 
-export const Navbar = () => {
+export const Navbar = ({isVisible}) => {
   return (
-    <div className="fixed top-0 left-0 w-full p-4 z-[100]"> {/* Make the navbar fixed at the top */}
+    <div className={`fixed ${isVisible?"top-0":"top-12"} left-0 w-full p-4 z-[100] transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
       <SlideTabs />
     </div>
   );

@@ -57,7 +57,7 @@ const OurHistory = () => {
     Translates,
   }) => {
     const ref = useRef(null);
-    const inView = useInView(ref, { once: true });
+    const inView = useInView(ref, { once: true , amount:0.8 });
 
     return (
       <motion.div
@@ -81,8 +81,8 @@ const OurHistory = () => {
       <div className=" w-[65%]  absolute top-[10%] right-0 aspect-square">
         <Image src="/images/chakra.png" alt="img" fill />
       </div>
-      <div className=" w-[70%]  absolute top-[40%] -left-[10%] aspect-square">
-        <Image src="/images/chakra.png" alt="img" fill />
+      <div className=" w-[65%]  absolute top-[43%] left-0 aspect-square">
+        <Image src="/images/chakra_left.png" alt="img" fill />
       </div>
       <div className=" w-[65%]  absolute bottom-[10%] right-0 aspect-square">
         <Image src="/images/chakra.png" alt="img" fill />

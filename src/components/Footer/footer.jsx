@@ -43,7 +43,15 @@ const Footer = () => {
       <h1 className="font-bold text-3xl text-white"> Have Queries?</h1>
       <p className=" font-light text-[14px] text-[#888888]"> We will get back to you quickly. </p></div>
       <div id="left-bottom">
-     <h1 className="font-light text-[19px] text-[#888888]"> Enter your Email Address</h1>
+      <form class="w-full max-w-sm">
+  <div class="flex items-center border-b border-white py-2 z-[25]">
+    <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Enter your Email Address" aria-label="Email Address" />
+   
+    <button class="flex-shrink-0 border-transparent border-4 text-white hover:text-teal-800 text-sm py-1 px-2 rounded" type="button">
+      Submit
+    </button>
+  </div>
+</form>
 
       </div>
       </div>

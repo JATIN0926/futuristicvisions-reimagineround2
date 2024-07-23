@@ -15,8 +15,8 @@ const TextRevealByWord = ({ text, className }) => {
 
   return (
     <div ref={targetRef} className={`relative h-auto w-max z-0 ${className}`}>
-      <div className="relative mx-auto flex max-w-4xl items-center bg-transparent px-[1rem]">
-        <p className="flex flex-wrap p-0 text-white/20 dark:text-black/20 text-7xl font-PlayfairDisplay-Medium">
+      <div className="relative mx-auto flex  items-center bg-transparent px-[1rem]">
+        <p className="flex flex-wrap p-0 text-white/20 dark:text-black/20 font-PlayfairDisplay-Medium">
           {words.map((word, i) => {
             const start = (i) / words.length;
             const end =  start+1  / words.length;

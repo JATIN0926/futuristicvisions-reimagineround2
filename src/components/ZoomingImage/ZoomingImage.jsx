@@ -23,7 +23,7 @@ const ZoomingImage = () => {
         end: "+=70%",
         pin: true,
         scrub: true,
-        markers: true,
+        // markers: true,
         onUpdate: (self) => {
           if (self.progress > 0.05) {
             document.querySelectorAll(".disappearing-image").forEach((img) => {

@@ -9,8 +9,8 @@ import Footer from "@/components/Footer/footer";
 import Hero from "@/components/Hero/Hero";
 import { Navbar } from "@/components/Navbar/Navbar";
 import OurHistory from "@/components/OurHistory/OurHistory";
-import { Rotating3d } from "@/components/Rotating3d/Rotating3d";
 import ZoomingImage from "@/components/ZoomingImage/ZoomingImage";
+import Sec3d from "@/components/Sec3d/Sec3d";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -33,12 +33,12 @@ export default function Home() {
         <Loader onLoaded={() => setLoading(false)} />
       ) : (
         <>
-          <ZoomingImage />
-          <AboutUs />
-           <OurHistory />
+          <ZoomingImage /> 
+           <AboutUs />
+          <OurHistory />
           <ExpandingCards />
           <ExploreIndia />
-          <Rotating3d />
+          {/* <Sec3d /> */}
           <Footer />
         </>
       )}

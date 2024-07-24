@@ -114,26 +114,25 @@ const Hero = () => {
             <div className="content z-[3]">
               <div className="flex flex-col items-center justify-center gap-1">
                 <div className="flex items-center justify-center gap-2">
-                  <hr />
-                  <p className="text-xl font-Raleway-Regular">Experience Diversity of India</p>
-                  <hr />
+                  <hr className=" w-[1.6rem] mbXSmall:w-[3rem] mbSmall:w-[4rem] mbMedium:w-[5rem] border-[1px] border-solid border-white" />
+                  <p className=" text-xs mbXSmall:text-sm mbSmall:text-lg laptop:text-xl font-Raleway-Regular">Experience Diversity of India</p>
+                  <hr className="w-[1.6rem] mbXSmall:w-[3rem] mbSmall:w-[4rem] mbMedium:w-[5rem] border-[1px] border-solid border-white" />
                 </div>
-                <h1 className="text-7xl font-semibold font-PlayfairDisplay-Bold">{item.title}</h1>
-                <div className="relative w-[30%] h-[6rem]">
+                <h1 className=" text-3xl mbXSmall:text-4xl mbSmall:text-5xl mbMedium:text-6xl laptop:text-7xl font-semibold font-PlayfairDisplay-Bold">{item.title}</h1>
+                <div className="relative w-[50%] mbXSmall:w-[40%] mbMedium:w-[30%] h-[3rem] mbSmall:h-[6rem]">
                   <Image src="/images/Flourish.svg" alt="img" fill className="object-contain" />
                 </div>
               </div>
-              <p className="font-Raleway-Medium absolute -bottom-[65%] -left-[8%]">{item.location}</p>
+              <p className="font-Raleway-Medium absolute hidden mbSmall:block -bottom-[65%] -left-[8%]">{item.location}</p>
             </div>
           </div>
         ))}
       </div>
-
-      <div className="thumbnail">
+      <div className="thumbnail  flex-row mbSmall:flex-col bottom-[10px] right-[-63%]  mbXSmall:right-[-30%] mbSmall:-right-[7%] mbMedium:-right-[5%] gap-[10px] mbXSmall:gap-[15px] laptop:gap-[20px]">
         {videos.map((item, index) => (
           <div
             key={index}
-            className={`item ${index === currentIndex ? "active border-2 border-[#DAC374] rounded-[20px] scale-110" : ""}`}
+            className={`item w-[13%] mbXSmall:w-[15%] mbSmall:w-[47%] mbMedium:w-1/2 h-[4rem] mbSmall:h-[5rem] mbMedium:h-[6rem] ${index === currentIndex ? "active border-2 border-[#DAC374] rounded-[20px] scale-110" : ""}`}
             ref={(el) => (thumbnailsRef.current[index] = el)}
             onClick={() => handleSelect(index)}
           >

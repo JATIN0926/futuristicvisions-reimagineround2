@@ -25,33 +25,30 @@ const HeroNav = () => {
 
   const handleMenuClick = () => {
     setMenuOpen(prevState => !prevState);
-
     if (!menuOpen) {
-      // Play the timeline to show buttons
       tl.current.play();
     } else {
-      // Reverse the timeline to hide buttons
       tl.current.reverse();
     }
   };
 
   return (
-    <div className='w-full absolute top-6 bg-none px-6 z-[300]'>
+    <div className='w-full absolute top-3.5 mbXSmall:top-6 bg-none px-3 mbSmall:px-6 z-[300]'>
       <div className="flex items-start justify-between">
-        <div className="w-[8rem] h-[3.5rem] relative">
-          <Image src="/images/logo.png" alt='img' fill />
+        <div className=" w-[6rem] mbXSmall:w-[8rem] mbSmall:w-[10rem] mbMedium:w-[12rem] h-[3rem] relative">
+          <Image src="/images/logo.svg" alt='img' fill />
         </div>
         <div className="flex flex-col items-center justify-center gap-2">
           <button 
-            className='rounded-full bg-[#003049] text-white p-3  w-[10rem] cursor-pointer'
+            className='rounded-full bg-[#003049] text-white  p-2 mbXSmall:p-3 text-[0.65rem] mbXSmall:text-sm mbSmall:text-base w-[5rem] mbXSmall:w-[6rem] mbSmall:w-[8rem] mbMedium:w-[10rem] cursor-pointer'
             onClick={handleMenuClick}
           >
             MENU
           </button>
-          <button ref={el => buttonRefs.current[0] = el} className='rounded-full bg-[#003049] text-white p-3 w-[10rem] uppercase cursor-pointer'>Discover</button>
-          <button ref={el => buttonRefs.current[1] = el} className='rounded-full bg-[#003049] text-white p-3 w-[10rem] uppercase cursor-pointer'>History</button>
-          <button ref={el => buttonRefs.current[2] = el} className='rounded-full bg-[#003049] text-white p-3 w-[10rem] uppercase cursor-pointer'>Plan Trip</button>
-          <button ref={el => buttonRefs.current[3] = el} className='rounded-full bg-[#003049] text-white p-3 w-[10rem] uppercase cursor-pointer'>3D mode</button>
+          <button ref={el => buttonRefs.current[0] = el} className='rounded-full bg-[#003049] text-white  p-2 mbXSmall:p-3  text-[0.65rem] mbXSmall:text-sm mbSmall:text-base w-[5rem] mbXSmall:w-[6rem] mbSmall:w-[8rem] mbMedium:w-[10rem] uppercase cursor-pointer'>Discover</button>
+          <button ref={el => buttonRefs.current[1] = el} className='rounded-full bg-[#003049] text-white  p-2 mbXSmall:p-3  text-[0.65rem] mbXSmall:text-sm mbSmall:text-base w-[5rem] mbXSmall:w-[6rem] mbSmall:w-[8rem] mbMedium:w-[10rem] uppercase cursor-pointer'>History</button>
+          <button ref={el => buttonRefs.current[2] = el} className='rounded-full bg-[#003049] text-white  p-2 mbXSmall:p-3  text-[0.65rem] mbXSmall:text-sm mbSmall:text-base w-[5rem] mbXSmall:w-[6rem] mbSmall:w-[8rem] mbMedium:w-[10rem] uppercase cursor-pointer'>Plan Trip</button>
+          <button ref={el => buttonRefs.current[3] = el} className='rounded-full bg-[#003049] text-white  p-2 mbXSmall:p-3  text-[0.65rem] mbXSmall:text-sm mbSmall:text-base w-[5rem] mbXSmall:w-[6rem] mbSmall:w-[8rem] mbMedium:w-[10rem] uppercase cursor-pointer'>3D mode</button>
         </div>
       </div>
     </div>

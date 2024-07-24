@@ -31,11 +31,11 @@ export default function Home() {
       ) : (
         <>
           <ZoomingImage /> 
-         {/* <AboutUs /> */}  
-          {/* <OurHistory /> */}
+         <AboutUs />  
+          <OurHistory />
           <ExpandingCards />
           <ExploreIndia />
-          {/* <Footer /> */}
+          <Footer />
         </>
       )}
     </main>

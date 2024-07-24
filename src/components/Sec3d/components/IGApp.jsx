@@ -15,6 +15,9 @@ export const IGApp = ({ images, onSelectText, onSelectImages, canvasVisible, isC
   // const handleToggleCanvas = () => {
   //   setIsCanvasVisible(prevState => !prevState)
   // }
+  const [selectedFrame, setSelectedFrame] = useState(null);
+
+  
 
   return (
     <>
@@ -23,7 +26,13 @@ export const IGApp = ({ images, onSelectText, onSelectImages, canvasVisible, isC
           <color attach="background" args={['#191920']} />
           <fog attach="fog" args={['#191920', 0, 15]} />
           <group position={[0, -0.5, 0]}>
-            <Frames images={images} onSelectText={onSelectText} onSelectImages={onSelectImages} canvasVisible={canvasVisible} isCanvasVisible={isCanvasVisible} />
+            <Frames images={images}
+             onSelectText={onSelectText}
+              onSelectImages={onSelectImages}
+               canvasVisible={canvasVisible}
+                isCanvasVisible={isCanvasVisible}
+                selectedFrame={selectedFrame}
+                setSelectedFrame={setSelectedFrame} />
             <mesh rotation={[-Math.PI / 2, 0, 0]}>
               <planeGeometry args={[50, 50]} />
               <MeshReflectorMaterial
@@ -47,7 +56,7 @@ export const IGApp = ({ images, onSelectText, onSelectImages, canvasVisible, isC
   )
 }
 
-function Frames({  images, canvasVisible, isCanvasVisible, onSelectImages, onSelectText, q = new THREE.Quaternion(), p = new THREE.Vector3() }) {
+function Frames({  images, canvasVisible, isCanvasVisible, onSelectImages, onSelectText, selectedFrame, setSelectedFrame, q = new THREE.Quaternion(), p = new THREE.Vector3() }) {
   const ref = useRef()
   const clicked = useRef()
   const [, params] = useRoute('/item/:id')
@@ -83,20 +92,23 @@ function Frames({  images, canvasVisible, isCanvasVisible, onSelectImages, onSel
           onSelectImages={onSelectImages}
           canvasVisible={canvasVisible}
           isCanvasVisible={isCanvasVisible}
+          selectedFrame={selectedFrame}
+          setSelectedFrame={setSelectedFrame}
         />
       ))}
     </group>
   )
 }
 
-function Frame({ onSelectImages, onSelectText, url, title, description, images, imagesSet, textSet, canvasVisible, isCanvasVisible, ...props }) {
+function Frame({ onSelectImages, onSelectText, url, title, description, images, imagesSet, textSet, canvasVisible, isCanvasVisible,  selectedFrame, setSelectedFrame, ...props }) {
   const image = useRef()
   const frame = useRef()
   const [, params] = useRoute('/item/:id')
   const [hovered, hover] = useState(false)
   const [rnd] = useState(() => Math.random())
   const name = getUuid(url)
-  const isActive = params?.id === name
+  // const isActive = params?.id === name
+  const isActive = params?.id === name || selectedFrame === name;
   useCursor(hovered)
   useFrame((state, dt) => {
     image.current.material.zoom = 2 + Math.sin(rnd * 10000 + state.clock.elapsedTime / 3) / 2
@@ -115,6 +127,16 @@ function Frame({ onSelectImages, onSelectText, url, title, description, images, 
     canvasVisible(isCanvasVisible)
     onSelectImages(images)  // Send selected images to parent
     onSelectText(textSet)
+    
+  }
+
+  const onFrameClick = ()=> {
+    // setSelectedFrame(name);
+    if (selectedFrame === name) {
+      setSelectedFrame(null); // Deselect the frame if it's already active
+    } else {
+      setSelectedFrame(name); // Set the clicked frame as active
+    }
   }
 
   return (
@@ -125,7 +147,7 @@ function Frame({ onSelectImages, onSelectText, url, title, description, images, 
         onPointerOut={() => hover(false)}
         scale={[1, GOLDENRATIO, 0.05]}
         position={[0, GOLDENRATIO / 2, 0]}
-        // onClick={handleClick}
+        onClick={onFrameClick}
         >
         <boxGeometry />
         <meshStandardMaterial color="#151515" metalness={0.5} roughness={0.5} envMapIntensity={2} />
@@ -135,16 +157,24 @@ function Frame({ onSelectImages, onSelectText, url, title, description, images, 
         </mesh>
         <Image raycast={() => null} ref={image} position={[0, 0, 0.7]} url={url} />
       </mesh>
-      <Text maxWidth={0.1} anchorX="left" anchorY="top" position={[0.55, GOLDENRATIO, 0]} fontSize={0.05}>
+      <Text maxWidth={0.3} anchorX="left" anchorY="top" position={[0.55, GOLDENRATIO, 0]} fontSize={0.05}>
         {title}
         {/* <a href="#">Explore</a> */}
       </Text>
-      <Html  maxWidth={0.1} anchorX="left" anchorY="top" position={[0.55, GOLDENRATIO-0.06, 0]} fontSize={0.025}>
+      {selectedFrame === name && (
+      <Html maxWidth={0.1} anchorX="left" anchorY="top" position={[0.55, GOLDENRATIO-0.1, 0]} fontSize={0.025}>
         <br />
-        <button onClick={handleClick} style={{borderRadius:'50%'}}>
+        {/* <button onClick={handleClick} style={{borderRadius:'50%'}}>
         Explore
+          </button> */}
+          <button
+          onClick={handleClick}
+            className="p-1 w-[4rem] text-white rounded-md border-white border-2 bg-black text-sm hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] transition duration-200"
+          >
+            Explore
           </button>
       </Html>
+       )}
     </group>
   )
 }

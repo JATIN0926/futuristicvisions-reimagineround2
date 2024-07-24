@@ -26,8 +26,11 @@ export const RotatingSec = ({images, textSet, canvasVisible, isCanvasVisible}) =
           scroll up/down ...
         </a>
         {/* <button onClick={handleClick} >Go back</button> */}
-        <button onClick={handleClick} style={{ pointerEvents: 'auto', position:'fixed', left:'50%',top:'-7%', borderRadius:'50%',padding:'2rem', paddingTop:'2.5rem'}}>
+        <button onClick={handleClick} style={{ background:'white', color:'black',fontWeight:'600', pointerEvents: 'auto', position:'fixed', left:'50%',top:'-8%', borderRadius:'50%',padding:'1rem 1.5rem', paddingTop:'3rem', borderColor:'white'}}>
           Back
+        </button>
+        <button onClick={handleClick}  style={{ background:'white', color:'black',fontWeight:'600',  pointerEvents: 'auto', position:'fixed', left:'50%',bottom:'-8%', padding:' 1.5rem 0.75rem', borderRadius:'50%', paddingBottom:'3rem', borderColor:'white'}}>
+          Back to 2D
         </button>
       </div>
       </>

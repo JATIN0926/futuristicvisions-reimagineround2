@@ -91,10 +91,12 @@ export const RSApp = ({ images, textSet }) => {
                     flexWrap: "wrap",
                     width: "27vw",
                   }}
+                  className="font-semibold text-2xl font-Raleway-SemiBold"
                 >
                   {text.heading || "Default Heading"}
                 </h2>
                 <p
+                  className="font-Raleway-Regular"
                   style={{
                     padding: "0 20px",
                     position: "fixed",
@@ -107,15 +109,24 @@ export const RSApp = ({ images, textSet }) => {
                 >
                   {text.para || "Default Paragraph"}
                 </p>
+                <button
+                  style={{ 
+                    position: "fixed",
+                    top: width > 600 ? `${index * 50 + 14}vh` : "30vh",
+                    left: width > 600 ? "1.3rem" : `${index * 50 - 7}vw` }}
+                  className="p-2 w-[6rem] text-white rounded-md border-white border-2 bg-black text-sm hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] transition duration-200"
+                >
+                  book now
+                </button>
               </div>
             ))}
           </div>
-          <button
+          {/* <button
             style={{ position: "fixed", top: "420vh" }}
             className="p-2 w-[6rem] text-white rounded-md border-white border-2 bg-black text-sm hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] transition duration-200"
           >
             book now
-          </button>
+          </button> */}
         </Html>
         <Rig
           position={[-1, 0, 0]}

@@ -83,7 +83,7 @@ const ZoomingImage = () => {
       />
       <div className="content">
         <section className="section hero">
-          <Hero />
+          {/* <Hero /> */}
         </section>
       </div>
       <div className="image-container">

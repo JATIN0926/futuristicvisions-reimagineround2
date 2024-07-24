@@ -53,3 +53,12 @@
 ::-webkit-scrollbar{
   display: none;
 }
+/* globals.css */
+
+/* Adjust base-page-size styles if needed */
+.base-page-size {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+

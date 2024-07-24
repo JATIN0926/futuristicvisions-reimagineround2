@@ -34,7 +34,7 @@ const useResize = () => {
   return size;
 };
 
-export const RSApp = ({ images }) => {
+export const RSApp = ({ images, textSet }) => {
   const [hoveredImage, setHoveredImage] = useState(null);
 
   useEffect(() => {
@@ -74,178 +74,59 @@ export const RSApp = ({ images }) => {
   }
 
   return (
-    <>
-      {
-        <Canvas camera={{ position: [0, 0, 100], fov: 15 }}>
-          <fog attach="fog" args={["#a79", 8.5, 12]} />
-          <ScrollControls pages={4} horizontal={isHorizontal} enabled={true}>
-            <Html position={[1, 0, 0]}>
-              <h2
-                style={{
-                  padding: "0 20px",
-                  position: "fixed",
-                  top: "-7vh",
-                  left: "70%",
-                  display: "flex",
-                  flexWrap: "wrap",
-                  width: "27vw",
-                }}
-              >
-                Yoga
-              </h2>
-              <p
-                style={{
-                  padding: "0 20px",
-                  position: "fixed",
-                  top: "0vh",
-                  left: "70%",
-                  display: "flex",
-                  flexWrap: "wrap",
-                  width: "27vw",
-                }}
-              >
-                Book the most beautiful experince in Yoga and mediation for self
-                peace. At the Rishikesh.
-              </p>
-              <p
-                style={{
-                  padding: "0 20px",
-                  position: "fixed",
-                  top: "50vh",
-                  left: "70%",
-                  display: "flex",
-                  flexWrap: "wrap",
-                  width: "27vw",
-                }}
-              >
-                Book the most beautiful experince in Yoga and mediation for self
-                peace. At the Rishikesh.
-              </p>
-              <p
-                style={{
-                  padding: "0 20px",
-                  position: "fixed",
-                  top: "100vh",
-                  left: "70%",
-                  display: "flex",
-                  flexWrap: "wrap",
-                  width: "27vw",
-                }}
-              >
-                Book the most beautiful experince in Yoga and mediation for self
-                peace. At the Rishikesh.
-              </p>
-              <p
-                style={{
-                  padding: "0 20px",
-                  position: "fixed",
-                  top: "150vh",
-                  left: "70%",
-                  display: "flex",
-                  flexWrap: "wrap",
-                  width: "27vw",
-                }}
-              >
-                Book the most beautiful experince in Yoga and mediation for self
-                peace. At the Rishikesh.
-              </p>
-              <p
-                style={{
-                  padding: "0 20px",
-                  position: "fixed",
-                  top: "200vh",
-                  left: "70%",
-                  display: "flex",
-                  flexWrap: "wrap",
-                  width: "27vw",
-                }}
-              >
-                Book the most beautiful experince in Yoga and mediation for self
-                peace. At the Rishikesh.
-              </p>
-              <p
-                style={{
-                  padding: "0 20px",
-                  position: "fixed",
-                  top: "250vh",
-                  left: "70%",
-                  display: "flex",
-                  flexWrap: "wrap",
-                  width: "27vw",
-                }}
-              >
-                Book the most beautiful experince in Yoga and mediation for self
-                peace. At the Rishikesh.
-              </p>
-              <p
-                style={{
-                  padding: "0 20px",
-                  position: "fixed",
-                  top: "300vh",
-                  left: "70%",
-                  display: "flex",
-                  flexWrap: "wrap",
-                  width: "27vw",
-                }}
-              >
-                Book the most beautiful experince in Yoga and mediation for self
-                peace. At the Rishikesh.
-              </p>
-              <p
-                style={{
-                  padding: "0 20px",
-                  position: "fixed",
-                  top: "350vh",
-                  left: "70%",
-                  display: "flex",
-                  flexWrap: "wrap",
-                  width: "27vw",
-                }}
-              >
-                Book the most beautiful experince in Yoga and mediation for self
-                peace. At the Rishikesh.
-              </p>
-              <p
-                style={{
-                  padding: "0 20px",
-                  position: "fixed",
-                  top: "400vh",
-                  left: "70%",
-                  display: "flex",
-                  flexWrap: "wrap",
-                  width: "27vw",
-                }}
-              >
-                Book the most beautiful experince in Yoga and mediation for self
-                peace. At the Rishikesh.
-              </p>
-              <button></button>
-              <button
-                style={{ position: "fixed", top: "420vh" }}
-                className="p-2 w-[6rem] text-white rounded-md border-white border-2 bg-black text-sm hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] transition duration-200"
-              >
-                book now
-              </button>
-            </Html>
-            <Rig
-              position={[-1, 0, 0]}
-              rotation={[0, 0, 0.15]}
-              hoveredImage={hoveredImage}
-            >
-              <Carousel setHoveredImage={setHoveredImage} images={images} />
-            </Rig>
-            <Scroll html>
-              {/* <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}> */}
-              {/* <div style={{ padding: '0 20px', position: 'fixed', top:'50vh', left:'70vw', display: 'flex', flexWrap:'wrap', width:'27vw' }}>
-              <p>Book the most beautiful experince in Yoga and 
-                mediation for self peace. At the Rishikesh near Ram Jhula and  Lakshan Jhula. </p>
-            </div> */}
-              {/* </div> */}
-            </Scroll>
-          </ScrollControls>
-        </Canvas>
-      }
-    </>
+    <Canvas camera={{ position: [0, 0, 100], fov: 15 }}>
+      <fog attach="fog" args={["#a79", 8.5, 12]} />
+      <ScrollControls pages={4} horizontal={isHorizontal} enabled={true}>
+        <Html position={[1, 0, 0]} horizontal={true}>
+          <div style={{ display: "flex", flexDirection: "row" }}>
+            {textSet.map((text, index) => (
+              <div key={index}>
+                <h2
+                  style={{
+                    padding: "0 20px",
+                    position: "fixed",
+                    top: width > 600 ? `${index * 50 - 7}vh` : "25vh",
+                    left: width > 600 ? "0rem" : `${index * 50 - 7}vw`,
+                    display: "flex",
+                    flexWrap: "wrap",
+                    width: "27vw",
+                  }}
+                >
+                  {text.heading || "Default Heading"}
+                </h2>
+                <p
+                  style={{
+                    padding: "0 20px",
+                    position: "fixed",
+                    top: width > 600 ? `${index * 50}vh` : "30vh",
+                    left: width > 600 ? "0rem" : `${index * 50 - 7}vw`,
+                    display: "flex",
+                    flexWrap: "wrap",
+                    width: "27vw",
+                  }}
+                >
+                  {text.para || "Default Paragraph"}
+                </p>
+              </div>
+            ))}
+          </div>
+          <button
+            style={{ position: "fixed", top: "420vh" }}
+            className="p-2 w-[6rem] text-white rounded-md border-white border-2 bg-black text-sm hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] transition duration-200"
+          >
+            book now
+          </button>
+        </Html>
+        <Rig
+          position={[-1, 0, 0]}
+          rotation={[0, 0, 0.15]}
+          hoveredImage={hoveredImage}
+        >
+          <Carousel setHoveredImage={setHoveredImage} images={images} />
+        </Rig>
+        <Scroll html>{/* Add any other scrollable content here */}</Scroll>
+      </ScrollControls>
+    </Canvas>
   );
 };
 

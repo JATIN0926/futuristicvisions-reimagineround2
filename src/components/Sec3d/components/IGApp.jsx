@@ -9,7 +9,7 @@ import getUuid from 'uuid-by-string'
 const GOLDENRATIO = 1.61803398875
 
 
-export const IGApp = ({ images, onSelectImages, canvasVisible, isCanvasVisible }) => {
+export const IGApp = ({ images, onSelectText, onSelectImages, canvasVisible, isCanvasVisible }) => {
   // const [isCanvasVisible, setIsCanvasVisible] = useState(true)
 
   // const handleToggleCanvas = () => {
@@ -23,7 +23,7 @@ export const IGApp = ({ images, onSelectImages, canvasVisible, isCanvasVisible }
           <color attach="background" args={['#191920']} />
           <fog attach="fog" args={['#191920', 0, 15]} />
           <group position={[0, -0.5, 0]}>
-            <Frames images={images}  onSelectImages={onSelectImages} canvasVisible={canvasVisible} isCanvasVisible={isCanvasVisible} />
+            <Frames images={images} onSelectText={onSelectText} onSelectImages={onSelectImages} canvasVisible={canvasVisible} isCanvasVisible={isCanvasVisible} />
             <mesh rotation={[-Math.PI / 2, 0, 0]}>
               <planeGeometry args={[50, 50]} />
               <MeshReflectorMaterial
@@ -47,7 +47,7 @@ export const IGApp = ({ images, onSelectImages, canvasVisible, isCanvasVisible }
   )
 }
 
-function Frames({  images, canvasVisible, isCanvasVisible, onSelectImages, q = new THREE.Quaternion(), p = new THREE.Vector3() }) {
+function Frames({  images, canvasVisible, isCanvasVisible, onSelectImages, onSelectText, q = new THREE.Quaternion(), p = new THREE.Vector3() }) {
   const ref = useRef()
   const clicked = useRef()
   const [, params] = useRoute('/item/:id')
@@ -76,8 +76,10 @@ function Frames({  images, canvasVisible, isCanvasVisible, onSelectImages, q = n
         <Frame
           key={props.url}
           imagesSet={props.imagesSet}
+          textSet={props.textSet}
           {...props}
        
+          onSelectText={onSelectText}
           onSelectImages={onSelectImages}
           canvasVisible={canvasVisible}
           isCanvasVisible={isCanvasVisible}
@@ -87,7 +89,7 @@ function Frames({  images, canvasVisible, isCanvasVisible, onSelectImages, q = n
   )
 }
 
-function Frame({ onSelectImages, url, title, description, images, imagesSet, canvasVisible, isCanvasVisible, ...props }) {
+function Frame({ onSelectImages, onSelectText, url, title, description, images, imagesSet, textSet, canvasVisible, isCanvasVisible, ...props }) {
   const image = useRef()
   const frame = useRef()
   const [, params] = useRoute('/item/:id')
@@ -103,14 +105,16 @@ function Frame({ onSelectImages, url, title, description, images, imagesSet, can
   })
 
   const Cimages = imagesSet
+  const Ctext = textSet
 
   const handleClick = () => {
     images=Cimages
-    
+    textSet=Ctext
     // handleToggleCanvas()  
     isCanvasVisible = !isCanvasVisible
     canvasVisible(isCanvasVisible)
     onSelectImages(images)  // Send selected images to parent
+    onSelectText(textSet)
   }
 
   return (

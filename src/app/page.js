@@ -3,11 +3,8 @@ import { useState, useEffect } from "react";
 import Loader from "@/components/Loader/Loader";
 import AboutUs from "@/components/AboutUs/AboutUs";
 import ExpandingCards from "@/components/Carousel/expanding_cards";
-import { InfiniteMovingCards } from "@/components/ExploreIndia/ExploreCards";
 import ExploreIndia from "@/components/ExploreIndia/exploreIndia";
 import Footer from "@/components/Footer/footer";
-import Hero from "@/components/Hero/Hero";
-import { Navbar } from "@/components/Navbar/Navbar";
 import OurHistory from "@/components/OurHistory/OurHistory";
 import ZoomingImage from "@/components/ZoomingImage/ZoomingImage";
 import Sec3d from "@/components/Sec3d/Sec3d";
@@ -38,7 +35,6 @@ export default function Home() {
           <OurHistory />
           <ExpandingCards />
           <ExploreIndia />
-          {/* <Sec3d /> */}
           <Footer />
         </>
       )}

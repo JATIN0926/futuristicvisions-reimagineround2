@@ -1,9 +1,10 @@
+"use client"
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-export const SlideTabsExample = () => {
+export const Trip_Slider = () => {
   return (
-    <div className="bg-neutral-100 py-20">
+    <div className={` w-full z-[100] transition-opacity duration-500`}>
       <SlideTabs />
     </div>
   );
@@ -24,13 +25,11 @@ const SlideTabs = () => {
           opacity: 0,
         }));
       }}
-      className="relative mx-auto flex w-fit rounded-full border-2 border-black bg-white p-1"
+      className="relative flex w-full rounded-full border-none p-1"
     >
-      <Tab setPosition={setPosition}>Home</Tab>
-      <Tab setPosition={setPosition}>Pricing</Tab>
-      <Tab setPosition={setPosition}>Features</Tab>
-      <Tab setPosition={setPosition}>Docs</Tab>
-      <Tab setPosition={setPosition}>Blog</Tab>
+      <Tab setPosition={setPosition}>Two days</Tab>
+      <Tab setPosition={setPosition}>Road Trips</Tab>
+      <Tab setPosition={setPosition}>Pan India</Tab>
 
       <Cursor position={position} />
     </ul>
@@ -54,7 +53,8 @@ const Tab = ({ children, setPosition }) => {
           opacity: 1,
         });
       }}
-      className="relative z-10 block cursor-pointer px-3 py-1.5 text-xs uppercase text-white mix-blend-difference md:px-5 md:py-3 md:text-base"
+      className="relative focus:font-semibold focus:text-[#2C2C2C] transition-all z-10 block cursor-pointer px-3 py-1.5 text-[0.65rem] uppercase text-[#888888] laptop:px-5 laptop:py-3 mbSmall:text-base"
+      tabIndex={0}
     >
       {children}
     </li>
@@ -67,7 +67,7 @@ const Cursor = ({ position }) => {
       animate={{
         ...position,
       }}
-      className="absolute z-0 h-7 rounded-full bg-black md:h-12"
+      className="absolute z-0 h-[0.15rem] bg-[#D62828] mbSmall:h-1 bottom-2"
     />
   );
 };

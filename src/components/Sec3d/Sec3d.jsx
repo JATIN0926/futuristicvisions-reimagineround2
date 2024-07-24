@@ -1,8 +1,11 @@
+
+
+
 import { useState } from 'react'
 import { ImageGallery } from './components/ImageGallery'
 import { RotatingSec } from './components/RotatingSec'
 
-function Sec3d() {
+function App() {
   const images = [
     // Front
     { position: [0, 0, 1.5], rotation: [0, 0, 0], url: "/images/img1_.jpeg", acti: "rafting" },
@@ -19,25 +22,70 @@ function Sec3d() {
     { position: [2, 0, 2.75], rotation: [0, -Math.PI / 2.5, 0], url: "/images/img9_.jpeg", acti: "rafting" }
   ]
 
+  const texts = [
+    {
+      heading: 'Heading',
+      para: 'Book the most beautiful experince in Heading and mediation for self peace. At the Rishikesh.'
+    },
+    {
+      heading: '2dHeading',
+      para: 'Book the most beautiful experince in Heading and mediation for self peace. At the Rishikesh.'
+    },
+    {
+      heading: '3dHeading',
+      para: 'Book the most beautiful experince in Heading and mediation for self peace. At the Rishikesh.'
+    },
+    {
+      heading: '4dHeading',
+      para: 'Book the most beautiful experince in Heading and mediation for self peace. At the Rishikesh.'
+    },
+    {
+      heading: '5dHeading',
+      para: 'Book the most beautiful experince in Heading and mediation for self peace. At the Rishikesh.'
+    },
+    {
+      heading: '6dHeading',
+      para: 'Book the most beautiful experince in Heading and mediation for self peace. At the Rishikesh.'
+    },
+    {
+      heading: '7dHeading',
+      para: 'Book the most beautiful experince in Heading and mediation for self peace. At the Rishikesh.'
+    },
+    {
+      heading: '8dHeading',
+      para: 'Book the most beautiful experince in Heading and mediation for self peace. At the Rishikesh.'
+    },
+    {
+      heading: '9dHeading',
+      para: 'Book the most beautiful experince in Heading and mediation for self peace. At the Rishikesh.'
+    }
+  ]
+
   const [selectedImages, setSelectedImages] = useState(images)
 
   const handleSelectImages = (images) => {
     setSelectedImages(images)
   }
 
+  const [selectedText, setSelectedText] = useState(texts)
+
+  const handleSelectText = (texts) => {
+    setSelectedText(texts)
+  }
+
+
   const [isCanvasVisible, setIsCanvasVisible] = useState(true)
 
   const handleToggleCanvas = (isCanvasVisible) => {
-    // setIsCanvasVisible(prevState => !prevState)
     setIsCanvasVisible(isCanvasVisible)
   }
 
   return (
     <>
-      <ImageGallery onSelectImages={handleSelectImages} canvasVisible={handleToggleCanvas} isCanvasVisible={isCanvasVisible}/>
-      <RotatingSec images={selectedImages} canvasVisible={handleToggleCanvas} isCanvasVisible={!isCanvasVisible} />
+      <ImageGallery onSelectText={handleSelectText} onSelectImages={handleSelectImages} canvasVisible={handleToggleCanvas} isCanvasVisible={isCanvasVisible} />
+      <RotatingSec textSet={selectedText} images={selectedImages} canvasVisible={handleToggleCanvas} isCanvasVisible={!isCanvasVisible} />
     </>
   )
 }
 
-export default Sec3d
+export default App

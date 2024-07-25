@@ -1,6 +1,7 @@
 import './IGstyles.css'
 import { IGApp } from './IGApp'
 import React, { useEffect, useState } from 'react'
+import { CustomLink } from '@/components/CustomLink/CustomLink';
 
 
 const useResize = () => {
@@ -541,9 +542,9 @@ export const ImageGallery = ({ onSelectText, onSelectImages, canvasVisible, isCa
   return (
     <>
     <IGApp images={images} onSelectText={onSelectText} onSelectImages={onSelectImages} canvasVisible={canvasVisible} isCanvasVisible={isCanvasVisible}/>
-    <button style={{ background:'#808080', color:'black',fontWeight:'600',  pointerEvents: 'auto', position:'fixed', left: butttonLeft ,bottom:'-8%', padding:' 1.5rem 0.75rem', borderRadius:'50%', paddingBottom:'3rem', borderColor:'white'}}>
+    <CustomLink href="/" style={{ background:'#808080', color:'black',fontWeight:'600',  pointerEvents: 'auto', position:'fixed', left: butttonLeft ,bottom:'-8%', padding:' 1.5rem 0.75rem', borderRadius:'50%', paddingBottom:'3rem', borderColor:'white'}}>
           Back to 2D
-    </button>
+    </CustomLink>
     </>
   )
 }

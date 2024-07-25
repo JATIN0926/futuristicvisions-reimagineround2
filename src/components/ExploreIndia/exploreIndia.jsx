@@ -3,6 +3,7 @@ import React from 'react'
 import { InfiniteMovingCards } from './ExploreCards';
 import TextRevealByWord from '../AboutUs/textreveal';
 import Link from 'next/link';
+import { CustomLink } from '../CustomLink/CustomLink';
 const quotes = [
     { imageUrl: "/images/varanasi.png", name: "Person A"},
     { imageUrl: "/images/jammu.png", name: "Person B" },
@@ -24,11 +25,11 @@ const ExploreIndia = () => {
       <TextRevealByWord className='text-black text-[0.7rem] mbXSmall:text-base mbSmall:text-[1.55rem] mbMedium:text-[2.1rem] laptop:text-4xl tbPortrait:text-5xl text-center flex-nowrap pb-5 mbXSmall:pb-12 mbSmall:pb-16 mbMedium:pb-24 !m-0 font-PlayfairDisplay-Bold' text={" Experience India's Culture, Adventure, and Nature"}/>
      
       <InfiniteMovingCards  items={quotes} />
-      <Link href="/page2">
+      <CustomLink href="/page2">
       <button className=" px-3 py-2 mbXSmall:px-5  mbXSmall:py-3 rounded-[0.2rem] border border-black bg-white text-black text-sm hover:shadow-[4px_4px_0px_0px_rgba(0,0,0)] transition duration-200 mb-4">
         Explore in 3D
       </button>
-      </Link>
+      </CustomLink>
        </div>
   )
 }

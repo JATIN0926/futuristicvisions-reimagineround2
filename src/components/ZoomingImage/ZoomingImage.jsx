@@ -32,6 +32,10 @@ const ZoomingImage = () => {
               gsap.to(img, { opacity: 0, duration: 1 });
             });
           }
+          if (self.progress > 0.5 && !self.earlyTriggered) { // Adjust the threshold as needed
+            setZoomingAnimationComplete(true);
+            self.earlyTriggered = true;
+          }
         },
       },
     });
@@ -57,7 +61,7 @@ const ZoomingImage = () => {
         onComplete: () => {
           document.querySelector(".image-container").style.display = "none";
           document.querySelector(".disappearing-image").style.display = "none";
-          setZoomingAnimationComplete(true);
+          // setZoomingAnimationComplete(true);
         },
       });
 
@@ -68,7 +72,7 @@ const ZoomingImage = () => {
   }, [setZoomingAnimationComplete]);
 
   return (
-    <div className="wrapper mb-[43rem]">
+    <div className="wrapper mb-[2rem]">
       <Image
         src="/images/incredible.svg"
         alt="img"

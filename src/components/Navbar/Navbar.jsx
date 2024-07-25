@@ -35,7 +35,7 @@ const SlideTabs = () => {
           opacity: 0,
         }));
       }}
-      className="relative mx-auto flex w-fit rounded-full border-2 border-black p-1 glassmorphic-bg"
+      className="relative  mbXSmall:mx-auto flex justify-center gap-3 mbXSmall:gap-0 w-[95vw] mbXSmall:w-[90vw] mbSmall:w-fit rounded-full border-2 border-black p-1 glassmorphic-bg"
     >
       <Tab setPosition={setPosition} to="about" offset={150}>
         Discover India
@@ -78,7 +78,7 @@ const Tab = ({ children, setPosition, to, isExternal = false }) => {
             opacity: 1,
           });
         }}
-        className="relative z-10 block cursor-pointer px-3 py-1.5 text-xs uppercase text-white md:px-5 md:py-3 md:text-base"
+        className="relative z-10 block cursor-pointer px-0.5 mbXSmall:px-2 mbSmall:px-3 py-1.5 uppercase text-white md:px-5 md:py-3 text-[0.35rem] mbXSmall:text-[0.5rem] mbSmall:text-[0.8rem] mbMedium:text-base"
       >
         {children}
       </li>
@@ -101,7 +101,7 @@ const Tab = ({ children, setPosition, to, isExternal = false }) => {
             opacity: 1,
           });
         }}
-        className="relative z-10 block cursor-pointer px-3 py-1.5 text-xs uppercase text-white md:px-5 md:py-3 md:text-base"
+        className="relative z-10 block cursor-pointer px-0.5 mbXSmall:px-2 mbSmall:px-3 py-1.5 uppercase text-white md:px-5 md:py-3 text-[0.35rem] mbXSmall:text-[0.5rem] mbSmall:text-[0.8rem] mbMedium:text-base"
       >
         {children}
       </li>

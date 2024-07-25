@@ -31,26 +31,26 @@ const Footer = () => {
       </div>
       <div
         id="outer"
-        className="relative w-[100vw] flex flex-row justify-between items-start pb-[20rem]"
+        className="relative pr-3 mbSmall:pr-0 pt-24 mbMedium:pt-16 laptop:pt-0 w-[100vw] max-w-full flex flex-col mbSmall:flex-row justify-between items-center mbSmall:items-start gap-10 mbSmall:gap-0 pb-[20rem]"
       >
         <div
           id="inner-left"
-          className="flex flex-col gap-12 items-start justify-start pl-[4rem] pt-[rem]"
+          className="flex flex-row mbSmall:flex-col gap-4 mbSmall:gap-8 mbMedium:gap-12 items-start justify-start pl-0 mbXSmall:pl-[3rem] mbSmall:pl-[4rem]"
         >
-          <p className="text-xl font-Raleway-Regular underline underline-offset-8 text-white cursor-pointer">
+          <p className=" text-[0.45rem] mbXSmall:text-[0.75rem] mbSmall:text-base mbMedium:text-lg laptop:text-xl font-Raleway-Regular underline underline-offset-8 text-white cursor-pointer">
             Explore Union Territory
           </p>
-          <p className="text-xl font-Raleway-Regular underline underline-offset-8 text-white cursor-pointer">
+          <p className=" text-[0.45rem] mbXSmall:text-[0.75rem] mbSmall:text-base mbMedium:text-lg laptop:text-xl font-Raleway-Regular underline underline-offset-8 text-white cursor-pointer">
             Explore all States
           </p>
-          <p className="text-xl font-Raleway-Regular underline underline-offset-8 text-white cursor-pointer"> 
+          <p className=" text-[0.45rem] mbXSmall:text-[0.75rem] mbSmall:text-base mbMedium:text-lg laptop:text-xl font-Raleway-Regular underline underline-offset-8 text-white cursor-pointer"> 
             Contact Guide
           </p>
         </div>
-        <div id="inner-right" className="pr-[8rem] flex flex-col gap-12 ">
+        <div id="inner-right" className=" pr-0 mbSmall:pr-[1rem] mbMedium:pr-[5rem] laptop:pr-[8rem] flex flex-col items-center mbSmall:items-start gap-0 mbSmall:gap-12 ">
           <div id="left-top " className="pb-[2rem]">
-            <h1 className="font-bold text-3xl text-white"> Have Queries?</h1>
-            <p className=" font-light text-[14px] text-[#888888]">
+            <h1 className="font-bold text-base mbXSmall:text-lg mbSmall:text-xl mbMedium:text-2xl laptop:text-3xl text-white"> Have Queries?</h1>
+            <p className=" font-light text-[0.7rem] mbXSmall:text-[0.9rem] text-[#888888]">
               {" "}
               We will get back to you quickly.{" "}
             </p>

@@ -76,7 +76,7 @@ const Loader = ({ onLoaded }) => {
             />
           </div>
         </div>
-        <div className={`relative w-44 text-center ${stage===2?"h-[6rem]":" h-[2rem]"} overflow-hidden transition-all duration-500 origin-bottom`}>
+        <div className={`relative w-44 text-center  h-[2.2rem] overflow-hidden transition-all duration-500 origin-bottom`}>
           {textStages.map((item, index) => (
             <motion.div
               key={index}
@@ -95,18 +95,11 @@ const Loader = ({ onLoaded }) => {
                 stage === index && (
                   <div className="flex items-center justify-center gap-3">
                     <Image
-                      src="/images/incredible.svg"
+                      src="/images/logo.svg"
                       alt="img"
                       width={90}
-                      height={120}
-                      className=" aspect-square w-[7rem]"
-                    />
-                    <Image
-                      src="/images/india.svg"
-                      alt="img"
-                      width={80}
-                      height={80}
-                       className=" aspect-square w-[4rem]"
+                      height={30}
+                      className=" h-[3rem] w-[7rem]"
                     />
                   </div>
                 )

@@ -32,7 +32,7 @@ const PageTransition = ({ children }) => {
           duration: 0.75,
         }}
         variants={variants}
-        className=" z-[300] relative bg-red-900"
+        className=" relative"
       >
         {children}
       </motion.div>

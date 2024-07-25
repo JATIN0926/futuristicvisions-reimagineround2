@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <AnimationProvider>
         <body className={inter.className}>
-          <PageTransition>{children}</PageTransition>
+          {children}
         </body>
       </AnimationProvider>
     </html>

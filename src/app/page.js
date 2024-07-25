@@ -75,7 +75,7 @@ export default function Home() {
         <>
           <ZoomingImage />
           <AboutUs />
-          <OurHistory />
+          {/* <OurHistory /> */}
           <ExpandingCards />
           <ExploreIndia />
           <Footer />

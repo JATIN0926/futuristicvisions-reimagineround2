@@ -6,6 +6,8 @@ import Hero from "@/components/Hero/Hero";
 import "./ZoomingImage.css";
 import { useAnimationContext } from "../../context/AnimationContext.js";
 import Image from "next/image";
+import AboutUs from "../AboutUs/AboutUs";
+import OurHistory from "../OurHistory/OurHistory";
 gsap.registerPlugin(ScrollTrigger);
 
 const ZoomingImage = () => {
@@ -20,10 +22,10 @@ const ZoomingImage = () => {
         id: "image-zoom",
         trigger: ".wrapper",
         start: "top top",
-        end: "+=70%",
+        end: "+=100%",
         pin: true,
         scrub: true,
-        // markers: true,
+        markers: true,
         onUpdate: (self) => {
           if (self.progress > 0.05) {
             document.querySelectorAll(".disappearing-image").forEach((img) => {
@@ -55,7 +57,7 @@ const ZoomingImage = () => {
         onComplete: () => {
           document.querySelector(".image-container").style.display = "none";
           document.querySelector(".disappearing-image").style.display = "none";
-          setZoomingAnimationComplete(true); // Set the animation complete state
+          setZoomingAnimationComplete(true);
         },
       });
 
@@ -66,7 +68,7 @@ const ZoomingImage = () => {
   }, [setZoomingAnimationComplete]);
 
   return (
-    <div className="wrapper mb-[35rem]">
+    <div className="wrapper mb-[43rem]">
       <Image
         src="/images/incredible.svg"
         alt="img"
@@ -96,7 +98,7 @@ const ZoomingImage = () => {
 export default ZoomingImage;
 
 
-//for removing scrollTrigger
+
 
 // "use client";
 // import { useEffect } from "react";
@@ -112,15 +114,15 @@ export default ZoomingImage;
 //   const { setZoomingAnimationComplete } = useAnimationContext();
 
 //   useEffect(() => {
-//     const wrapper = document.querySelector(".wrapper");
+//     // Clear any previous ScrollTrigger instances
+//     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
 
-//     // Create the timeline and scroll trigger
 //     const tl = gsap.timeline({
 //       scrollTrigger: {
 //         id: "image-zoom",
-//         trigger: wrapper,
+//         trigger: ".wrapper",
 //         start: "top top",
-//         end: "+=70%",
+//         end: "+=100%",
 //         pin: true,
 //         scrub: true,
 //         markers: true,
@@ -130,14 +132,6 @@ export default ZoomingImage;
 //               gsap.to(img, { opacity: 0, duration: 1 });
 //             });
 //           }
-//         },
-//         onLeave: () => {
-//           // Reset styles when ScrollTrigger is killed
-//           resetStyles(wrapper);
-//         },
-//         onLeaveBack: () => {
-//           // Reset styles when ScrollTrigger is killed
-//           resetStyles(wrapper);
 //         },
 //       },
 //     });
@@ -163,23 +157,7 @@ export default ZoomingImage;
 //         onComplete: () => {
 //           document.querySelector(".image-container").style.display = "none";
 //           document.querySelector(".disappearing-image").style.display = "none";
-//           setZoomingAnimationComplete(true); // Set the animation complete state
-
-//           // Kill the ScrollTrigger and reset styles
-//           const scrollTrigger = ScrollTrigger.getById("image-zoom");
-//           if (scrollTrigger) {
-//             scrollTrigger.kill(true); // Pass true to revert the pinned element to its original state
-//           }
-
-//           // Reset styles to remove any extra space
-//           resetStyles(wrapper);
-
-//           // Ensure the user remains at the correct scroll position
-//           const wrapperTop = wrapper.getBoundingClientRect().top + window.scrollY;
-//           window.scrollTo({
-//             top: wrapperTop,
-//             behavior: "smooth",
-//           });
+//           setZoomingAnimationComplete(true);
 //         },
 //       });
 
@@ -189,21 +167,8 @@ export default ZoomingImage;
 //     };
 //   }, [setZoomingAnimationComplete]);
 
-//   const resetStyles = (element) => {
-//     element.style.marginTop = "0";
-//     element.style.transform = "none"; // Resetting transform property
-//     element.style.position = "relative";
-//     element.style.top = "auto";
-//     element.style.left = "auto";
-//     element.style.right = "auto";
-//     element.style.bottom = "auto";
-//     element.style.width = "auto";
-//     element.style.height = "auto";
-//     gsap.set(element, { y: 0 }); // Ensure transformY is reset
-//   };
-
 //   return (
-//     <div className="wrapper mb-[35rem]">
+//     <div className="wrapper">
 //       <Image
 //         src="/images/incredible.svg"
 //         alt="img"
@@ -226,11 +191,14 @@ export default ZoomingImage;
 //       <div className="image-container">
 //         <img src="/images/StartingCircle.png" alt="Top Image" className="img" />
 //       </div>
+//       <div className="spacer" />
 //     </div>
 //   );
 // };
 
 // export default ZoomingImage;
+
+
 
 
 

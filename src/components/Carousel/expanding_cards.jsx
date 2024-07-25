@@ -4,7 +4,7 @@ import { Trip_Slider } from "./Trip_Slider";
 
 const panelsData = [
   {
-    imageUrl: "/images/varanasi.png",
+    imageUrl: "/images/varanasi.jpg",
     title: "Varanasi",
     content:
       "A sacred Hindu city in northern India. Located on the Ganges River in Uttar Pradesh, it is flanked by the Varuna River to the north and the Asi River to the south.",

@@ -99,7 +99,7 @@ const Loader = ({ onLoaded }) => {
                       alt="img"
                       width={90}
                       height={30}
-                      className=" h-[3rem] w-[7rem]"
+                      className=" aspect-auto  w-[15rem]"
                     />
                   </div>
                 )

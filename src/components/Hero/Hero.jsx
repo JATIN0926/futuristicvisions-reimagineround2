@@ -120,7 +120,7 @@ const Hero = () => {
                 </div>
                 <h1 className=" text-3xl mbXSmall:text-4xl mbSmall:text-5xl mbMedium:text-6xl laptop:text-7xl font-semibold font-PlayfairDisplay-Bold">{item.title}</h1>
                 <div className="relative w-[50%] mbXSmall:w-[40%] mbMedium:w-[30%] h-[3rem] mbSmall:h-[6rem]">
-                  <Image src="/images/Flourish.svg" alt="img" fill className="object-contain" />
+                  <Image src="/images/Flourish.svg" alt="img" fill className="object-contain"   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"/>
                 </div>
               </div>
               <p className="font-Raleway-Medium absolute hidden mbSmall:block -bottom-[65%] -left-[8%]">{item.location}</p>

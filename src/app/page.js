@@ -29,8 +29,8 @@
 //         <Loader onLoaded={() => setLoading(false)} />
 //       ) : (
 //         <>
-//           <ZoomingImage /> 
-//          <AboutUs />  
+//           <ZoomingImage />
+//          <AboutUs />
 //           <OurHistory />
 //           <ExpandingCards />
 //           <ExploreIndia />
@@ -40,9 +40,6 @@
 //     </main>
 //   );
 // }
-
-
-
 
 // for loading one
 
@@ -75,7 +72,7 @@ export default function Home() {
         <>
           <ZoomingImage />
           <AboutUs />
-          {/* <OurHistory /> */}
+          <OurHistory />
           <ExpandingCards />
           <ExploreIndia />
           <Footer />

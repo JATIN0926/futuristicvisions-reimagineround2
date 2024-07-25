@@ -71,7 +71,7 @@ const OurHistory = () => {
         className={`${className}`}
         style={style}
       >
-        <Image src={src} alt={alt} fill />
+        <Image src={src} alt={alt} fill sizes="(min-width: 780px) calc(20vw - 10px), calc(30vw - 16px)"/>
       </motion.div>
     );
   };
@@ -79,13 +79,13 @@ const OurHistory = () => {
   return (
     <div className="bg-[#EAE2B7] relative flex flex-col w-screen max-w-full items-center justify-center gap-8 p-6">
       <div className=" w-[65%]  absolute top-[10%] right-0 aspect-square">
-        <Image src="/images/chakra.png" alt="img" fill />
+        <Image src="/images/chakra.png" alt="img" fill sizes="65vw" />
       </div>
       <div className=" w-[65%]  absolute top-[43%] left-0 aspect-square">
-        <Image src="/images/chakra_left.png" alt="img" fill />
+        <Image src="/images/chakra_left.png" alt="img" fill sizes="65vw" />
       </div>
       <div className=" w-[65%]  absolute bottom-[10%] right-0 aspect-square">
-        <Image src="/images/chakra.png" alt="img" fill />
+        <Image src="/images/chakra.png" alt="img" fill sizes="65vw" />
       </div>
       <div className="flex flex-col md:flex-row items-center justify-start gap-16 w-full px-4 md:px-10">
         <div className="w-full md:w-[40%] mb-8 md:mb-0 self-start">
@@ -100,7 +100,7 @@ const OurHistory = () => {
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           className="relative w-full md:w-[40%] aspect-[3/4] -translate-y-[18rem]"
         >
-          <Image src="/images/hist1.png" alt="" fill className="object-cover" />
+          <Image src="/images/hist1.png" alt="" fill className="object-cover" sizes="(min-width: 780px) calc(40vw - 51px), calc(100vw - 80px)" />
         </motion.div>
       </div>
       <div className="relative flex items-center justify-around w-full">

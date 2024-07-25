@@ -24,7 +24,7 @@ const AboutUs = () => {
     };
   }, []);
   return (
-    <div ref={aboutUsRef} className=" w-screen max-w-full ">
+    <div id="about" ref={aboutUsRef} className=" w-screen max-w-full ">
       <Navbar isVisible={isNavbarVisible} />
       <div className="flex flex-col w-screen max-w-full  bg-white h-auto mb-[20rem] ">
         <div className=" ml-[2rem] flex flex-row justify-center mt-[5rem] mb-0 items-center ">

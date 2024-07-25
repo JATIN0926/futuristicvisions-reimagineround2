@@ -7,25 +7,25 @@ const panelsData = [
     imageUrl: "/images/varanasi.jpg",
     title: "Varanasi",
     content:
-      "A sacred Hindu city in northern India. Located on the Ganges River in Uttar Pradesh, it is flanked by the Varuna River to the north and the Asi River to the south.",
+      "A sacred Hindu city in northern India. Located on the Ganges River in Uttar Pradesh",
   },
   {
     imageUrl: "/images/Mussorie.png",
     title: "Mussorie",
     content:
-      'A picturesque hill station in the Indian state of Uttarakhand, Mussoorie is known as the "Queen of the Hills." Located in the Garhwal Himalayan range, it offers stunning views of the Doon Valley and Shivalik ranges.',
+      'A picturesque hill station in the Indian state of Uttarakhand, Mussoorie is known as the "Queen of the Hills."',
   },
   {
     imageUrl: "/images/ooty.png",
     title: "Ooty",
     content:
-      "Officially known as Udhagamandalam, Ooty is a popular hill station in Tamil Nadu. Nestled in the Nilgiri Hills, it is renowned for its tea gardens, serene lakes, and the scenic Nilgiri Mountain Railway.",
+      "Officially known as Udhagamandalam, Ooty is a popular hill station in Tamil Nadu. Nestled in the Nilgiri Hills",
   },
   {
     imageUrl: "/images/jammu.png",
     title: "Jammu",
     content:
-      "A major city in the northern Indian union territory of Jammu and Kashmir, Jammu is situated on the banks of the Tawi River. It is known for its temples, particularly the Vaishno Devi shrine, a significant Hindu pilgrimage site.",
+      "A major city in the northern Indian union territory of Jammu and Kashmir, Jammu is situated on the banks of the Tawi River.",
   },
 ];
 
@@ -75,7 +75,7 @@ const ExpandingCards = () => {
   };
 
   return (
-    <div className=" w-screen max-w-full flex flex-col justify-center z-[10] items-center h-auto py-[10rem] px-5 mbSmall:px-10 ">
+    <div id="trips" className=" w-screen max-w-full flex flex-col justify-center z-[10] items-center h-auto py-[10rem] px-5 mbSmall:px-10 ">
       <div className="flex justify-between flex-row h-[auto] w-screen max-w-full">
         <h1 className="text-black font-PlayfairDisplay-Bold text-[1.35rem] mbXSmall:text-2xl mbSmall:text-3xl mbMedium:text-4xl laptop:text-5xl">
           Book Popular Trips
@@ -119,7 +119,7 @@ const ExpandingCards = () => {
     {panel.title}
   </h3>
   <p
-    className={`flex p-[0.1rem] mbXSmall:p-[0.5rem] mbSmall:p-[1rem] mbMedium:p-[2rem] laptop:p-[3rem] pt-[1rem] text-center text-white text-[0.45rem] mbXSmall:text-[0.6rem] mbSmall:text-[0.65rem] mbMedium:text-xs laptop:text-sm tbPortrait:text-lg font-Raleway-Regular ${
+    className={`flex p-[0.1rem] mbXSmall:p-[0.5rem] mbSmall:p-[1rem] mbMedium:p-[2rem] laptop:p-[3rem] pt-[1rem] text-center text-white text-[0.45rem] mbXSmall:text-[0.6rem] mbSmall:text-[0.65rem] mbMedium:text-xs laptop:text-sm tbPortrait:text-lg leading-4 font-Raleway-Regular ${
       activeIndex === index
         ? "opacity-100 transition-opacity duration-1000 ease-[cubic-bezier(0.68, -0.55, 0.27, 1.55)] delay-500"
         : "opacity-0 transition-opacity duration-1000 ease-[cubic-bezier(0.68, -0.55, 0.27, 1.55)]"

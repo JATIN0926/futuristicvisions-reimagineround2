@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
@@ -6,8 +6,11 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <section className="relative grid min-h-screen w-full place-content-center overflow-hidden bg-cover bg-center">
-     <Image
+    <section
+      id="footer"
+      className="relative grid min-h-screen w-full place-content-center overflow-hidden bg-cover bg-center"
+    >
+      <Image
         src="/images/footerbg.png"
         alt="Footer background image"
         layout="fill"
@@ -17,49 +20,67 @@ const Footer = () => {
       />
       <div className="absolute inset-0 z-[5]">
         <div className="flex flex-col items-center justify-center p-[2rem] h-max space-y-4">
-        <Image 
+          <Image
             src="/icons/Incredible_India_Logo.png"
             alt="Incredible India Logo"
             height={300}
             width={300}
             objectFit="contain"
-        />
+          />
+        </div>
+      </div>
+      <div
+        id="outer"
+        className="relative w-[100vw] flex flex-row justify-between items-start pb-[20rem]"
+      >
+        <div
+          id="inner-left"
+          className="flex flex-col gap-12 items-start justify-start pl-[4rem] pt-[rem]"
+        >
+          <p className="text-xl font-Raleway-Regular underline underline-offset-8 text-white cursor-pointer">
+            Explore Union Territory
+          </p>
+          <p className="text-xl font-Raleway-Regular underline underline-offset-8 text-white cursor-pointer">
+            Explore all States
+          </p>
+          <p className="text-xl font-Raleway-Regular underline underline-offset-8 text-white cursor-pointer"> 
+            Contact Guide
+          </p>
+        </div>
+        <div id="inner-right" className="pr-[8rem] flex flex-col gap-12 ">
+          <div id="left-top " className="pb-[2rem]">
+            <h1 className="font-bold text-3xl text-white"> Have Queries?</h1>
+            <p className=" font-light text-[14px] text-[#888888]">
+              {" "}
+              We will get back to you quickly.{" "}
+            </p>
           </div>
-      </div>
-      <div id="outer"
-      className="relative w-[100vw] flex flex-row justify-between items-start pb-[20rem]">
-      <div id="inner-left" className="flex flex-col gap-12 items-start justify-start pl-[4rem] pt-[rem]">
-      
-        <p className="text-xl font-Raleway-Regular underline underline-offset-8 text-white">Explore Union Territory
-        </p>
-        <p className="text-xl font-Raleway-Regular underline underline-offset-8 text-white"> Explore all States</p>
-        <p className="text-xl font-Raleway-Regular underline underline-offset-8 text-white"> Contact Guide</p>
-      
-      
+          <div id="left-bottom">
+            <form class="w-full max-w-sm">
+              <div class="flex items-center border-b border-white py-2 z-[25]">
+                <input
+                  class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+                  type="text"
+                  placeholder="Enter your Email Address"
+                  aria-label="Email Address"
+                />
 
-      </div> 
-      <div id="inner-right" className="pr-[8rem] flex flex-col gap-12 "> 
-      <div id="left-top " className="pb-[2rem]"> 
-      <h1 className="font-bold text-3xl text-white"> Have Queries?</h1>
-      <p className=" font-light text-[14px] text-[#888888]"> We will get back to you quickly. </p></div>
-      <div id="left-bottom">
-      <form class="w-full max-w-sm">
-  <div class="flex items-center border-b border-white py-2 z-[25]">
-    <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Enter your Email Address" aria-label="Email Address" />
-   
-    <button class="flex-shrink-0 border-transparent border-4 text-white hover:text-teal-800 text-sm py-1 px-2 rounded" type="button">
-      Submit
-    </button>
-  </div>
-</form>
-
+                <button
+                  class="flex-shrink-0 border-transparent border-4 text-white hover:text-teal-800 text-sm py-1 px-2 rounded"
+                  type="button"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-      </div>
-      
-      </div>
-      <footer className="absolute flex justify-center w-full object-center align-bottom pt-[35rem] mt-[10rem] text-white font-Raleway-Regular text-xl"> Copyright 2023 Incredible India | All rights reserved</footer>
+      <footer className="absolute flex justify-center w-full object-center align-bottom pt-[35rem] mt-[10rem] text-white font-Raleway-Regular text-xl">
+        {" "}
+        Copyright 2023 Incredible India | All rights reserved
+      </footer>
       <Cards />
-      
     </section>
   );
 };
@@ -72,7 +93,7 @@ const Cards = () => {
       <Card
         containerRef={containerRef}
         src="/images/footer1.png"
-            alt="Example image"
+        alt="Example image"
         rotate="-6deg"
         top="70%"
         left="5%"
@@ -81,7 +102,7 @@ const Cards = () => {
       <Card
         containerRef={containerRef}
         src="/images/footer2.png"
-            alt="Example image"
+        alt="Example image"
         rotate="12deg"
         top="50%"
         left="15%"
@@ -90,7 +111,7 @@ const Cards = () => {
       <Card
         containerRef={containerRef}
         src="/images/footer3.png"
-            alt="Example image"
+        alt="Example image"
         rotate="-6deg"
         top="60%"
         left="26%"
@@ -99,7 +120,7 @@ const Cards = () => {
       <Card
         containerRef={containerRef}
         src="/images/footer4.png"
-            alt="Example image"
+        alt="Example image"
         rotate="16deg"
         top="70%"
         left="45%"
@@ -108,7 +129,7 @@ const Cards = () => {
       <Card
         containerRef={containerRef}
         src="/images/footer5.png"
-            alt="Example image"
+        alt="Example image"
         rotate="10deg"
         top="50%"
         left="55%"
@@ -117,7 +138,7 @@ const Cards = () => {
       <Card
         containerRef={containerRef}
         src="/images/footer6.png"
-            alt="Example image"
+        alt="Example image"
         rotate="-3deg"
         top="72%"
         left="70%"
@@ -126,7 +147,7 @@ const Cards = () => {
       <Card
         containerRef={containerRef}
         src="/images/footer7.png"
-            alt="Example image"
+        alt="Example image"
         rotate="-3deg"
         top="60%"
         left="80%"

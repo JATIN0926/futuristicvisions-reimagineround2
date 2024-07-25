@@ -80,7 +80,7 @@ const Loader = ({ onLoaded }) => {
           {textStages.map((item, index) => (
             <motion.div
               key={index}
-              className="absolute w-full text-2xl font-sodo-sans flex justify-center items-center"
+              className="absolute w-full text-2xl font-PlayfairDisplay-Medium font-semibold flex justify-center items-center"
               initial={{ y: "100%", opacity: 1 }}
               animate={{
                 y: stage === index ? 0 : stage > index ? "-100%" : "100%",

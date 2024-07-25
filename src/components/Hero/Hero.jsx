@@ -123,16 +123,16 @@ const Hero = () => {
                   <Image src="/images/Flourish.svg" alt="img" fill className="object-contain"   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"/>
                 </div>
               </div>
-              <p className="font-Raleway-Medium absolute hidden mbSmall:block -bottom-[65%] -left-[8%]">{item.location}</p>
+              <p className="font-Raleway-Medium absolute hidden mbSmall:block -bottom-[95%] -left-[8%]">{item.location}</p>
             </div>
           </div>
         ))}
       </div>
-      <div className="thumbnail  flex-row mbSmall:flex-col bottom-[10px] right-[-63%]  mbXSmall:right-[-30%] mbSmall:-right-[7%] mbMedium:-right-[5%] gap-[10px] mbXSmall:gap-[15px] laptop:gap-[20px]">
+      <div className="thumbnail  flex-row mbSmall:flex-col bottom-[10px] right-[-63%]  mbXSmall:right-[-30%] mbSmall:-right-[7%] mbMedium:right-[-3%] gap-[10px] mbXSmall:gap-[15px] laptop:gap-[20px]">
         {videos.map((item, index) => (
           <div
             key={index}
-            className={`item w-[13%] mbXSmall:w-[15%] mbSmall:w-[47%] mbMedium:w-1/2 h-[4rem] mbSmall:h-[5rem] mbMedium:h-[6rem] ${index === currentIndex ? "active border-2 border-[#DAC374] rounded-[20px] scale-110" : ""}`}
+            className={`item w-[13%] mbXSmall:w-[15%] mbSmall:w-[47%] mbMedium:w-[45%] h-[4rem] mbSmall:h-[5rem] mbMedium:h-[4rem] ${index === currentIndex ? "active border-2 border-[#DAC374] rounded-[6px] scale-110" : ""}`}
             ref={(el) => (thumbnailsRef.current[index] = el)}
             onClick={() => handleSelect(index)}
           >

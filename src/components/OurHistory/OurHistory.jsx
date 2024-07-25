@@ -90,7 +90,7 @@ const OurHistory = () => {
   };
 
   return (
-    <div className="bg-[#EAE2B7] relative flex flex-col w-screen max-w-full items-center justify-center gap-8 p-6">
+    <div id="history" className="bg-[#EAE2B7] relative flex flex-col w-screen max-w-full items-center justify-center gap-8 p-6">
       <div className=" w-[65%]  absolute top-[10%] right-0 aspect-square">
         <Image src="/images/chakra.png" alt="img" fill sizes="65vw" />
       </div>
@@ -101,8 +101,8 @@ const OurHistory = () => {
         <Image src="/images/chakra.png" alt="img" fill sizes="65vw" />
       </div>
       <div className="flex flex-col mbMedium:flex-row items-center justify-start gap-0 mbMedium:gap-16 w-full px-4 md:px-10">
-        <div className=" w-[90%] mbXSmall:w-[80%] mbSmall:w-[50%] mbMedium:w-[40%] mb-8 md:mb-0 self-center mbMedium:self-start order-2 mbMedium:order-1">
-          <h1 className="text-[#2C2C2C] text-center font-PlayfairDisplay-Medium  font-medium text-[1.45rem] mbXSmall:text-[1.65rem] laptop:text-4xl tbPortrait:text-5xl mt-2 w-full">
+        <div className=" w-[100%] mbXSmall:w-[80%] mbSmall:w-[50%] mbMedium:w-[40%] mb-8 md:mb-0 self-center mbMedium:self-start order-2 mbMedium:order-1">
+          <h1 className="text-[#2C2C2C] text-center font-PlayfairDisplay-Medium  font-medium text-[1.4rem] mbXSmall:text-[1.65rem] laptop:text-4xl tbPortrait:text-5xl mt-2 w-full">
             India has a recorded history of more than 5,000 years
           </h1>
         </div>
@@ -178,7 +178,7 @@ const OurHistory = () => {
         </svg>
         <div className="relative w-[90%] mbSmall:w-[60%] md:w-[40%] flex flex-wrap md:flex-nowrap">
           <div className="flex flex-col items-start justify-center w-[50%]">
-            <h1 className="text-[#888888] text-sm laptop:text-base font-PlayfairDisplay-Regular -rotate-[2deg] z-30">
+            <h1 className="text-[#888888] text-xs mbXSmall:text-sm laptop:text-base font-PlayfairDisplay-Regular -rotate-[2deg] z-30">
               St. Gautam Buddha
             </h1>
             <RotateImage
@@ -205,13 +205,13 @@ const OurHistory = () => {
             {/* <div className="relative aspect-[3/4] w-full z-20 -translate-x-1/4 translate-y-1/4">
               <Image src="/images/hist4.png" alt="" fill />
             </div> */}
-            <h1 className="text-[#888888] font-PlayfairDisplay-Regular rotate-6 translate-x-[0rem] mbMedium:translate-x-[-1rem] laptop:translate-x-[1rem] tbPortrait:translate-x-[2.5rem] translate-y-[3rem] mbMedium:translate-y-[2.5rem] laptop:translate-y-[3.5rem] tbPortrait:translate-y-[4.5rem] z-30">
+            <h1 className="text-[#888888] text-[0.8rem] mbXSmall:text-base font-PlayfairDisplay-Regular rotate-6 translate-x-[-1rem]  mbXSmall:translate-x-[0rem] mbMedium:translate-x-[-1rem] laptop:translate-x-[1rem] tbPortrait:translate-x-[2.5rem] translate-y-[1.7rem] mbXSmall:translate-y-[3rem] mbMedium:translate-y-[2.5rem] laptop:translate-y-[3.5rem] tbPortrait:translate-y-[4.5rem] z-30">
               Sh. Aryabhata
             </h1>
           </div>
         </div>
       </div>
-      <div className="relative w-full pt-24 mbMedium:pt-32 py-24 mbSmall:py-32 pl-1 flex items-center justify-start">
+      <div className="relative w-full pt-10 mbXSmall:pt-24 mbMedium:pt-32 py-24 mbSmall:py-32 pl-1 flex items-center justify-start">
         <svg
           className="absolute w-[70%] h-[60%]  mbXSmall:w-[80%] mbXSmall:h-[80%] mbSmall:w-[90%] mbSmall:h-[90%] mbMedium:w-full mbMedium:h-full top-[75%] laptop:top-[80%] right-[15%] mbMedium:right-[1%] laptop:right-[10%] rotate-[70deg] mbSmall:rotate-[60deg] mbMedium:rotate-45 "
           ref={addToRefs}
@@ -230,7 +230,7 @@ const OurHistory = () => {
         </svg>
         <div className="relative w-[90%] mbSmall:w-[60%] md:w-[40%] flex flex-wrap md:flex-nowrap">
           <div className="flex flex-col items-start justify-center w-1/2 md:w-[50%]">
-            <h1 className="text-[#888888] text-[0.7rem] mbSmall:text-[0.6rem] laptop:text-[0.85rem] tbPortrait:text-base font-PlayfairDisplay-Regular rotate-[4deg] z-30 self-center">
+            <h1 className="text-[#888888] text-[0.5rem] mbXSmall:text-[0.7rem] mbSmall:text-[0.6rem] laptop:text-[0.85rem] tbPortrait:text-base font-PlayfairDisplay-Regular rotate-[4deg] z-30 self-center">
               Chhatrapati Shivaji Maharaj
             </h1>
             <RotateImage
@@ -257,16 +257,16 @@ const OurHistory = () => {
             {/* <div className="relative aspect-[3/4] w-full z-20 -translate-x-1/4 translate-y-1/4">
               <Image src="/images/hist6.png" alt="" fill />
             </div> */}
-            <h1 className="text-[#888888] font-PlayfairDisplay-Regular -rotate-[5deg] translate-y-[2.5rem] laptop:translate-y-[4rem] translate-x-[-1rem] laptop:translate-x-0 z-30 self-center">
+            <h1 className="text-[#888888] text-[0.75rem] mbXSmall:text-base font-PlayfairDisplay-Regular -rotate-[5deg] translate-y-[2rem] mbXSmall:translate-y-[2.5rem] laptop:translate-y-[4rem] translate-x-[-1rem] laptop:translate-x-0 z-30 self-center">
               Emperor Akbar
             </h1>
           </div>
         </div>
       </div>
-      <div className="relative w-[110%] mbSmall:w-full pt-[5rem] mbSmall:pt-[9rem] mbMedium:pt-[11rem] py-[11rem] pr-10 flex items-center justify-end">
+      <div className="relative w-[120%] mbXSmall:w-[110%] mbSmall:w-full pt-[3rem] mbXSmall:pt-[5rem] mbSmall:pt-[9rem] mbMedium:pt-[11rem] py-[11rem] pr-10 flex items-center justify-end">
         <div className="relative w-[60%] md:w-[45%] flex flex-wrap md:flex-nowrap">
           <div className="absolute translate-x-[-2%]  laptop:translate-x-[2%] -rotate-6 left-0 bottom-0 translate-y-[150%] z-50">
-            <h1 className=" text-[0.8rem] mbSmall:text-xl laptop:text-2xl tbPortrait:text-3xl font-Raleway-Bold font-semibold text-white">
+            <h1 className=" text-[0.6rem] mbXSmall:text-[0.8rem] mbSmall:text-xl laptop:text-2xl tbPortrait:text-3xl font-Raleway-Bold font-semibold text-white">
               <span className="text-[#2C2C2C]">Great leaders </span>in 20th
               century
             </h1>
@@ -299,7 +299,7 @@ const OurHistory = () => {
           </div>
         </div>
         <svg
-          className="absolute w-[50%] h-[70%] mbSmall:w-[45%] mbSmall:h-[80%] mbMedium:w-[50%] mbMedium:h-full top-[55%] laptop:top-[60%] tbPortrait:top-[70%] left-[25%] mbSmall:left-[35%] rotate-[100deg] mbSmall:rotate-[130deg]"
+          className="absolute w-[50%] h-[70%] mbSmall:w-[45%] mbSmall:h-[80%] mbMedium:w-[50%] mbMedium:h-full top-[40%] mbXSmall:top-[55%] laptop:top-[60%] tbPortrait:top-[70%] left-[25%] mbSmall:left-[35%] rotate-[100deg] mbSmall:rotate-[130deg]"
           ref={addToRefs}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 100 100"
@@ -315,9 +315,9 @@ const OurHistory = () => {
           ))}
         </svg>
       </div>
-      <div className="w-full flex items-center py-6 mbSmall:py-12 mbMedium:py-32 justify-center">
-        <div className=" bg-white h-[12rem] w-[14rem] mbMedium:h-[15rem] mbMedium:w-[17rem] border-8 border-gray-300 flex items-center justify-center p-4 translate-y-[-15%] laptop:translate-y-[10%] tbPortrait:translate-y-[35%] ">
-          <h1 className=" text-3xl mbMedium:text-4xl text-center font-medium text-[#F77F00] font-PlayfairDisplay-Medium">
+      <div className="w-full flex items-center py-4 mbXSmall:py-6 mbSmall:py-12 mbMedium:py-32 justify-center">
+        <div className=" bg-white h-[9rem] w-[11rem] mbXSmall:h-[12rem] mbXSmall:w-[14rem] mbMedium:h-[15rem] mbMedium:w-[17rem] border-8 border-gray-300 flex items-center justify-center p-4 translate-y-[-60%] mbXSmall:translate-y-[-15%] laptop:translate-y-[10%] tbPortrait:translate-y-[35%] ">
+          <h1 className=" text-2xl mbXSmall:text-3xl mbMedium:text-4xl text-center font-medium text-[#F77F00] font-PlayfairDisplay-Medium">
             and this doesn’t End
           </h1>
         </div>

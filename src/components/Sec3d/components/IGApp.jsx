@@ -8,13 +8,30 @@ import getUuid from 'uuid-by-string'
 
 const GOLDENRATIO = 1.61803398875
 
+const useResize = () => {
+  const [size, setSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return size;
+};
+
 
 export const IGApp = ({ images, onSelectText, onSelectImages, canvasVisible, isCanvasVisible }) => {
-  // const [isCanvasVisible, setIsCanvasVisible] = useState(true)
 
-  // const handleToggleCanvas = () => {
-  //   setIsCanvasVisible(prevState => !prevState)
-  // }
   const [selectedFrame, setSelectedFrame] = useState(null);
 
   
@@ -131,12 +148,23 @@ function Frame({ onSelectImages, onSelectText, url, title, description, images, 
   }
 
   const onFrameClick = ()=> {
-    // setSelectedFrame(name);
     if (selectedFrame === name) {
       setSelectedFrame(null); // Deselect the frame if it's already active
     } else {
       setSelectedFrame(name); // Set the clicked frame as active
     }
+  }
+
+  const { width, height } = useResize();
+
+  var frameHeight = 1;
+  var frameWidth = GOLDENRATIO;
+  var textHtmlPos = 0.55;
+
+  if (width < 500) {
+    frameHeight = 0.6;
+    frameWidth = GOLDENRATIO-0.2;
+    textHtmlPos = 0.32;
   }
 
   return (
@@ -145,7 +173,8 @@ function Frame({ onSelectImages, onSelectText, url, title, description, images, 
         name={name}
         onPointerOver={(e) => (e.stopPropagation(), hover(true))}
         onPointerOut={() => hover(false)}
-        scale={[1, GOLDENRATIO, 0.05]}
+        scale={[frameHeight, frameWidth, 0.05]}
+        // scale={[1, GOLDENRATIO, 0.05]}
         position={[0, GOLDENRATIO / 2, 0]}
         onClick={onFrameClick}
         >
@@ -157,16 +186,12 @@ function Frame({ onSelectImages, onSelectText, url, title, description, images, 
         </mesh>
         <Image raycast={() => null} ref={image} position={[0, 0, 0.7]} url={url} />
       </mesh>
-      <Text maxWidth={0.3} anchorX="left" anchorY="top" position={[0.55, GOLDENRATIO, 0]} fontSize={0.05}>
+      <Text maxWidth={0.3} anchorX="left" anchorY="top" position={[textHtmlPos, GOLDENRATIO, 0]} fontSize={0.05}>
         {title}
-        {/* <a href="#">Explore</a> */}
       </Text>
       {selectedFrame === name && (
-      <Html maxWidth={0.1} anchorX="left" anchorY="top" position={[0.55, GOLDENRATIO-0.1, 0]} fontSize={0.025}>
+      <Html maxWidth={0.1} anchorX="left" anchorY="top" position={[textHtmlPos, GOLDENRATIO-0.1, 0]} fontSize={0.025}>
         <br />
-        {/* <button onClick={handleClick} style={{borderRadius:'50%'}}>
-        Explore
-          </button> */}
           <button
           onClick={handleClick}
             className="p-1 w-[4rem] text-white rounded-md border-white border-2 bg-black text-sm hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] transition duration-200"

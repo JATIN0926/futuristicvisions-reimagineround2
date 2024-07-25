@@ -1,6 +1,3 @@
-
-
-
 import { useState } from 'react'
 import { ImageGallery } from './components/ImageGallery'
 import { RotatingSec } from './components/RotatingSec'
@@ -25,39 +22,39 @@ function App() {
   const texts = [
     {
       heading: 'Heading',
-      para: 'Book the most beautiful experince in Heading and mediation for self peace. At the Rishikesh.'
+      para: 'Default para.'
     },
     {
       heading: '2dHeading',
-      para: 'Book the most beautiful experince in Heading and mediation for self peace. At the Rishikesh.'
+      para: 'Default para.'
     },
     {
       heading: '3dHeading',
-      para: 'Book the most beautiful experince in Heading and mediation for self peace. At the Rishikesh.'
+      para: 'Default para.'
     },
     {
       heading: '4dHeading',
-      para: 'Book the most beautiful experince in Heading and mediation for self peace. At the Rishikesh.'
+      para: 'Default para.'
     },
     {
       heading: '5dHeading',
-      para: 'Book the most beautiful experince in Heading and mediation for self peace. At the Rishikesh.'
+      para: 'Default para.'
     },
     {
       heading: '6dHeading',
-      para: 'Book the most beautiful experince in Heading and mediation for self peace. At the Rishikesh.'
+      para: 'Default para.'
     },
     {
       heading: '7dHeading',
-      para: 'Book the most beautiful experince in Heading and mediation for self peace. At the Rishikesh.'
+      para: 'Default para.'
     },
     {
       heading: '8dHeading',
-      para: 'Book the most beautiful experince in Heading and mediation for self peace. At the Rishikesh.'
+      para: 'Default para.'
     },
     {
       heading: '9dHeading',
-      para: 'Book the most beautiful experince in Heading and mediation for self peace. At the Rishikesh.'
+      para: 'Default para.'
     }
   ]
 

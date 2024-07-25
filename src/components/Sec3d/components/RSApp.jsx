@@ -11,7 +11,6 @@ import {
 } from "@react-three/drei";
 import { easing } from "maath";
 import "./RSutils";
-import { useLayoutEffect } from "react";
 
 const useResize = () => {
   const [size, setSize] = useState({
@@ -44,40 +43,23 @@ export const RSApp = ({ images, textSet }) => {
     }
   }, [images]);
 
-  // const useResize = () => {
-  //   const [size, setSize] = useState({
-  //     width: window.innerWidth,
-  //     height: window.innerHeight,
-  //   });
-
-  //   useEffect(() => {
-  //     const handleResize = () => {
-  //       setSize({
-  //         width: window.innerWidth,
-  //         height: window.innerHeight,
-  //       });
-  //     };
-
-  //     window.addEventListener("resize", handleResize);
-  //     return () => window.removeEventListener("resize", handleResize);
-  //   }, []);
-
-  //   return size;
-  // };
-
   const { width, height } = useResize();
 
   var isHorizontal = false;
+  var rigPositionX = -1;
+  var rigPositionY = 0;
 
   if (width < 600) {
     isHorizontal = true;
+    rigPositionX = 0;
+    rigPositionY = 0.4;
   }
 
   return (
     <Canvas camera={{ position: [0, 0, 100], fov: 15 }}>
       <fog attach="fog" args={["#a79", 8.5, 12]} />
       <ScrollControls pages={4} horizontal={isHorizontal} enabled={true}>
-        <Html position={[1, 0, 0]} horizontal={true}>
+        <Html position={[1, 0, 0]} >
           <div style={{ display: "flex", flexDirection: "row" }}>
             {textSet.map((text, index) => (
               <div key={index}>
@@ -85,24 +67,24 @@ export const RSApp = ({ images, textSet }) => {
                   style={{
                     padding: "0 20px",
                     position: "fixed",
-                    top: width > 600 ? `${index * 50 - 7}vh` : "25vh",
+                    top: width > 600 ? `${index * 50 - 7}vh` : "30vh",
                     left: width > 600 ? "0rem" : `${index * 50 - 7}vw`,
                     display: "flex",
                     flexWrap: "wrap",
                     width: "27vw",
                   }}
-                  className="font-semibold text-2xl font-Raleway-SemiBold"
+                  className="font-semibold text-lg mbSmall:text-2xl  font-Raleway-SemiBold"
                 >
                   {text.heading || "Default Heading"}
                 </h2>
                 <p
-                  className="font-Raleway-Regular"
+                  className="font-Raleway-Regular hidden mbSmall:flex"
                   style={{
                     padding: "0 20px",
                     position: "fixed",
                     top: width > 600 ? `${index * 50}vh` : "30vh",
                     left: width > 600 ? "0rem" : `${index * 50 - 7}vw`,
-                    display: "flex",
+                    // display: "flex",
                     flexWrap: "wrap",
                     width: "27vw",
                   }}
@@ -112,24 +94,18 @@ export const RSApp = ({ images, textSet }) => {
                 <button
                   style={{ 
                     position: "fixed",
-                    top: width > 600 ? `${index * 50 + 14}vh` : "30vh",
-                    left: width > 600 ? "1.3rem" : `${index * 50 - 7}vw` }}
-                  className="p-2 w-[6rem] text-white rounded-md border-white border-2 bg-black text-sm hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] transition duration-200"
+                    top: width > 600 ? `${index * 50 + 14}vh` : "37vh",
+                    left: width > 600 ? "1.3rem" : `${index * 50 -1}vw` }}
+                  className=" p-1 mbSmall:p-2 w-[4.5rem] mbSmall:w-[6rem] text-white rounded-md border-white border-2 bg-black text-xs mbSmall:text-sm hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] transition duration-200"
                 >
                   book now
                 </button>
               </div>
             ))}
           </div>
-          {/* <button
-            style={{ position: "fixed", top: "420vh" }}
-            className="p-2 w-[6rem] text-white rounded-md border-white border-2 bg-black text-sm hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] transition duration-200"
-          >
-            book now
-          </button> */}
         </Html>
         <Rig
-          position={[-1, 0, 0]}
+          position={[rigPositionX, rigPositionY, 0]}
           rotation={[0, 0, 0.15]}
           hoveredImage={hoveredImage}
         >
